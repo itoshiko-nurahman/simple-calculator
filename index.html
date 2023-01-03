@@ -9,32 +9,33 @@
   <title>Calc You Later</title>
 </head>
 <body>
-<!-- The calculator display -->
-<div id="calc-display">
-  <p id="result-display">123</p>
+<div class="calculator">
+  <!-- The calculator display -->
+  <div id="calc-display">
+    <p id="result-display">123</p>
+  </div>
+
+  <!-- Button for number and operator-->
+  <div id="btn-container">
+    <button class="operator">CLEAR</button>
+    <button class="operator">DELETE</button>
+    <button class="number">7</button>
+    <button class="number">8</button>
+    <button class="number">9</button>
+    <button class="operator">:</button>
+    <button class="number">4</button>
+    <button class="number">5</button>
+    <button class="number">6</button>
+    <button class="operator">x</button>
+    <button class="number">1</button>
+    <button class="number">2</button>
+    <button class="number">3</button>
+    <button class="operator">-</button>
+    <button class="number">.</button>
+    <button class="number">0</button>
+    <button class="operator">=</button>
+    <button class="operator">+</button>
+  </div>
 </div>
-
-<!-- Button for number -->
-  <div id="number-container">
-    <button class="btn-number" id="num-one">1</button>
-    <button class="btn-number" id="num-two">2</button>
-    <button class="btn-number" id="num-three">3</button>
-    <button class="btn-number" id="num-four">4</button>
-    <button class="btn-number" id="num-five">5</button>
-    <button class="btn-number" id="num-six">6</button>
-    <button class="btn-number" id="num-seven">7</button>
-    <button class="btn-number" id="num-eight">8</button>
-    <button class="btn-number" id="num-nine">9</button>
-    <button class="btn-number" id="num-zero">0</button>
-  </div>
-
-<!-- Button for operator -->
-  <div id="operations-container">
-    <button class="btn-opr" id="btn-add">+</button>
-    <button class="btn-opr" id="btn-sub">-</button>
-    <button class="btn-opr" id="btn-multiply">x</button>
-    <button class="btn-opr" id="btn-divide">:</button>
-    <button class="btn-opr" id="btn-equals">=</button>
-  </div>
 </body>
 </html>
