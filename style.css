@@ -11,3 +11,12 @@ html {
   border-radius: 10px;
 }
 
+#btn-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
