@@ -1,0 +1,13 @@
+html {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculator {
+  background-color: #aaa;
+  padding: 20px;
+  border-radius: 10px;
+}
+
