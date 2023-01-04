@@ -3,12 +3,14 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: sans-serif;
 }
 
 .calculator {
   background-color: #aaa;
   padding: 20px;
   border-radius: 10px;
+  border: 2px solid #333;
 }
 
 #btn-container {
@@ -19,4 +21,41 @@ html {
 
 .span-2 {
   grid-column: span 2;
+}
+
+#btn-clear {
+  background-color: #FFAAAA;
+}
+
+#btn-delete {
+  background-color: #AAAAFF;
+}
+
+button {
+  font-size: larger;
+  padding: 20px;
+  border-radius: 10px;
+  border:2px solid #333;
+}
+
+button:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: #ccc;
+}
+
+#calc-display {
+  background-color: #fff;
+  border: 2px solid #333;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding-right: 10px;
+  font-size: larger;
+  font-weight: bold;
 }
