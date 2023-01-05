@@ -12,14 +12,14 @@
 <div class="calculator">
   <!-- The calculator display -->
   <div id="calc-display">
-    <p id="last-display">123</p>
+    <p id="last-display"></p>
     <p id="current-display"></p>
   </div>
 
   <!-- Button for number and operator-->
   <div id="btn-container">
-    <button type="submit" class="operator span-2" id="btn-clear">CLEAR</button>
-    <button type="submit" class="operator span-2" id="btn-delete">DELETE</button>
+    <button type="submit" class="span-2" id="btn-clear">CLEAR</button>
+    <button type="submit" class="span-2" id="btn-delete">DELETE</button>
     <button type="submit" value="7" class="number">7</button>
     <button type="submit" value="8" class="number">8</button>
     <button type="submit" value="9" class="number">9</button>
@@ -34,8 +34,8 @@
     <button type="submit" value="-" class="operator">-</button>
     <button type="submit" value="." class="number">.</button>
     <button type="submit" value="0" class="number">0</button>
-    <button type="submit" value="=" class="operator">=</button>
-    <button type="submit" value="+" class="operator">+</button>
+    <button type="submit" value="=" id="equals">=</button>
+    <button type="submit" value="+" class="operator" id="add">+</button>
   </div>
 </div>
 </body>
