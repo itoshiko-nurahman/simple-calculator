@@ -5,6 +5,7 @@ let numbers = document.querySelectorAll(".number");
 let operations = document.querySelectorAll('.operator')
 let equals = document.getElementById('equals');
 let btnDelete = document.getElementById('btn-delete');
+let dot = document.getElementById("dot");
 
 //Variable to help
 let resetNumber = false;
@@ -12,14 +13,16 @@ let firstNumber = '';
 let secondNumber = '';
 let currentOperator = null;
 
+window.addEventListener('keydown', handleKeyboardInput)
+
 // add the number
 numbers.forEach((number) => {
-  number.addEventListener('click', (event) => numInput(event))
+  number.addEventListener('click', () => numInput(number.textContent))
 });
 
 // add the operator
 operations.forEach((operation) => {
-  operation.addEventListener('click', (event) => opeInput(event))
+  operation.addEventListener('click', () => opeInput(operation.textContent))
 })
 
 function numInput (number) {
@@ -52,7 +55,7 @@ function opeInput(operator) {
   if (operator !== null) numberOperation();
   firstNumber = currentDisplay.textContent;
   currentOperator = operator;
-  lastDisplay.textContent = `${firstNumber} ${currentOperator} =`;
+  lastDisplay.textContent = `${firstNumber} ${currentOperator}`;
   resetNumber = true;
 }
 
@@ -69,6 +72,18 @@ function numberOperation () {
   lastDisplay.textContent = `${firstNumber} ${currentOperator} ${secondNumber} =`
   currentOperator = null
 }
+
+equals.addEventListener('click',() => numberOperation());
+
+function appendPoint() {
+  if (shouldResetScreen) resetScreen()
+  if (currentDisplay.textContent === '')
+    currentDisplay.textContent = '0'
+  if (currentDisplay.textContent.includes('.')) return
+  currentDisplay.textContent += '.'
+}
+
+dot.addEventListener('click', appendPoint)
 
 function roundResult(number) {
   return Math.round(number * 1000) / 1000
@@ -106,4 +121,22 @@ function operate(operator, a, b) {
     default:
       return null
   }
+}
+
+//Keyboard accesibility
+function handleKeyboardInput(e) {
+  if (e.key >= 0 && e.key <= 9) numInput(e.key)
+  if (e.key === '.') appendPoint()
+  if (e.key === '=' || e.key === 'Enter') numberOperation()
+  if (e.key === 'Backspace') btnDelete()
+  if (e.key === 'Escape') resetNum()
+  if (e.key === '+' || e.key === '-' || e.key === '*' || e.key === '/')
+    opeInput(convertOperator(e.key))
+}
+
+function convertOperator(keyboardOperator) {
+  if (keyboardOperator === '/') return '÷'
+  if (keyboardOperator === '*') return '×'
+  if (keyboardOperator === '-') return '−'
+  if (keyboardOperator === '+') return '+'
 }
