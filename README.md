@@ -8,4 +8,4 @@ This is an **online simple calculator** with ***HTML***, ***CSS***, and ***Java 
 - 2 display screen, 1 for the history of your calculation
 
 ## Appreance
-/assets/images/Appreance.png
+![Appreance](/assets/images/Appreance.png)
